@@ -1,25 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class elvisController : MonoBehaviour {
 	static Animator animator;
-	public float speed;
-	public float rotationSpeed;
+	NavMeshAgent agent;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+		agent = GetComponent<NavMeshAgent> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		float translation = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
-		float rotation = Input.GetAxis ("Horizontal") * rotationSpeed * Time.deltaTime;
-		transform.Translate (0, 0, translation);
-		transform.Rotate (0, rotation, 0);
+		
+		if (Input.GetMouseButtonDown (0)) {
+			RaycastHit hit;
 
-		if (translation != 0) {
+			if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit, 100)) {
+				agent.SetDestination (hit.point);
+			}
+		}
+
+		if (agent.destination != agent.nextPosition) {
 			animator.SetBool ("isJogging", true);
 		} else {
 			animator.SetBool ("isJogging", false);
