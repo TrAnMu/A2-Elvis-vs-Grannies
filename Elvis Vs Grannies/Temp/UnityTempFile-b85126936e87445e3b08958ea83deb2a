@@ -80,7 +80,7 @@
 -define:UNITY_TEAM_LICENSE
 'Assets/Scripts/elvisController.cs'
 'Assets/Scripts/grannyController.cs'
-'Assets/grannySpawner.cs'
+'Assets/Scripts/grannySpawner.cs'
 -r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll'
 -r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.dll'

@@ -2742,7 +2742,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8c555cea7354b4e19a045b7464a48bbd, type: 3}
   m_Controller: {fileID: 9100000, guid: 3117161dc09804b9f931b039a2d9a00e, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -2761,8 +2761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elvis: {fileID: 0}
-  speed: 5
-  rotationSpeed: 150
+  speed: 3
+  rotationSpeed: 100
 --- !u!136 &136422285775152756
 CapsuleCollider:
   m_ObjectHideFlags: 1
