@@ -8,6 +8,7 @@ public class grannyController : MonoBehaviour {
 	public GameObject elvis;
 	private float maxSpeed = 2.0F;
 	private bool falling = false;
+	static int grannies = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,10 @@ public class grannyController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (grannies <= 0) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("WinScene");
+		}
+
 		if (falling == false && Physics.Raycast (transform.position + Vector3.up, Vector3.down)) {
 			// Chase!
 			if (Vector3.Distance (elvis.transform.position, transform.position) <= 5) {
@@ -37,12 +42,19 @@ public class grannyController : MonoBehaviour {
 			}
 		} else {
 			if (falling == false) {
+				grannies--;
 				animator.SetBool ("isFalling", true);
 				falling = true;
 				rb.constraints = RigidbodyConstraints.None;
 			}
 
 			rb.velocity -= new Vector3 (0, 2.0F * Time.deltaTime, 0);
+		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag("Player")) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("LoseScene");
 		}
 	}
 }
