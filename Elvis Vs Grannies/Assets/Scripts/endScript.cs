@@ -13,7 +13,8 @@ public class endScript : MonoBehaviour {
 	void Update () {
 		// Reset
 		if (Input.GetKeyDown (KeyCode.R)) {
-			UnityEngine.SceneManagement.SceneManager.LoadScene (0);
+			grannyController.grannies = 3;
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("StartScene");
 		}
 
 		// Quit

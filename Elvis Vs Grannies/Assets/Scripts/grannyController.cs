@@ -8,7 +8,7 @@ public class grannyController : MonoBehaviour {
 	public GameObject elvis;
 	private float maxSpeed = 2.0F;
 	private bool falling = false;
-	static int grannies = 3;
+	public static int grannies = 3;
 
 	// Use this for initialization
 	void Start () {

@@ -47,7 +47,7 @@ public class elvisController : MonoBehaviour {
 				paused = false;
 				Time.timeScale = 1.0F;
 			}
-
+				
 			UnityEngine.SceneManagement.SceneManager.LoadScene ("MainScene");
 		}
 
